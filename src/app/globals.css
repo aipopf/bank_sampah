@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  background: #fbfcf9;
+  color: #14251b;
+}
+
+@theme inline {
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fbfcf9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+  scroll-snap-type: y proximity;
+}
+
+#beranda,
+#tentang,
+#jenis-sampah,
+#harga-sampah,
+#prosedur,
+#dampak,
+#kontak {
+  scroll-margin-top: 6rem;
+}
+
+.story-opening__image,
+.story-opening__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.story-opening__image {
+  background-image: url("/images/tpa-opening.jpg");
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.025);
+  animation: opening-image-in 1.4s ease-out both;
+}
+
+.story-opening {
+  height: 100vh;
+  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+.story-opening__content {
+  padding-top: clamp(5rem, 16svh, 8rem);
+  padding-bottom: clamp(4rem, 14svh, 7rem);
+}
+
+.story-opening__overlay {
+  background:
+    linear-gradient(90deg, rgb(5 15 11 / 82%) 0%, rgb(5 15 11 / 58%) 55%, rgb(5 15 11 / 20%) 100%),
+    linear-gradient(0deg, rgb(5 15 11 / 60%) 0%, transparent 58%);
+}
+
+.story-transition {
+  height: clamp(5rem, 14vw, 10rem);
+  background: linear-gradient(180deg, #0a1711 0%, #f4f3e8 100%);
+}
+
+#perubahan {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+.opening-fade {
+  animation: opening-fade-in 800ms ease-out both;
+}
+
+.opening-fade--delayed {
+  animation-delay: 150ms;
+}
+
+.opening-fade--later {
+  animation-delay: 300ms;
+}
+
+.opening-fade--latest {
+  animation-delay: 450ms;
+}
+
+.scroll-reveal-ready {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+}
+
+.scroll-reveal-ready.scroll-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes opening-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes opening-image-in {
+  from {
+    opacity: 0.65;
+    transform: scale(1.06);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: y proximity;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
