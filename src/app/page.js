@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -131,13 +132,13 @@ export default function Home() {
                 melalui layanan Bank Sampah kami.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
+                <Link
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-emerald-800 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800"
-                  href="#kontak"
+                  href="/register"
                 >
                   Daftar Menjadi Nasabah
                   <ArrowRight aria-hidden="true" className="size-4" />
-                </a>
+                </Link>
                 <a
                   className="inline-flex min-h-12 items-center justify-center rounded-full border border-emerald-900/15 bg-white px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800"
                   href="#prosedur"
@@ -146,7 +147,7 @@ export default function Home() {
                 </a>
               </div>
               <p className="mt-4 text-xs leading-5 text-slate-500">
-                Pendaftaran nasabah dilakukan melalui pengelola bank sampah.
+                Isi formulir untuk membuat akun nasabah Bank Sampah Digital.
               </p>
             </ScrollReveal>
 
@@ -463,13 +464,13 @@ export default function Home() {
                 setoran di wilayahmu.
               </p>
             </div>
-            <a
+            <Link
               className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-lime-200 px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-lime-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-              href="#kontak"
+              href="/register"
             >
               Daftar Menjadi Nasabah
               <ArrowRight aria-hidden="true" className="size-4" />
-            </a>
+            </Link>
           </Container>
         </section>
       </main>
