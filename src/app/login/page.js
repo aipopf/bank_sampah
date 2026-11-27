@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function LoginPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center px-4 py-12 sm:px-6">
+    <main className="flex min-h-screen flex-col items-center justify-center px-4 py-12 sm:px-6">
       <section className="w-full max-w-md">
         <Link
           aria-label="Kembali ke beranda"
@@ -44,6 +44,24 @@ export default function LoginPage() {
           </p>
         </div>
       </section>
+
+      <div className="mt-8 w-full max-w-md rounded-3xl border border-slate-200 bg-slate-100 p-6 text-center text-sm text-slate-600 shadow-sm sm:p-9">
+      <div className="space-y-1">
+        <p>admin_test@gmail.com</p>
+        <p>pw: admin_test</p>
+        <p>----------------------------------</p>
+
+        <p className="pt-2">petugas_test@gmail.com</p>
+        <p>pw: petugas_test</p>
+        <p>----------------------------------</p>
+
+        <p className="pt-2">nasabah_test@gmail.com</p>
+        <p>pw: nasabah_test</p>
+        
+      </div>
+      </div>
     </main>
+
+    
   );
 }
