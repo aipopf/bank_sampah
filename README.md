@@ -1,8 +1,8 @@
 # Bank Sampah Digital
 
 Fondasi aplikasi web Bank Sampah Digital menggunakan Next.js App Router,
-JavaScript, Tailwind CSS, React, dan Lucide React. Tahap ini hanya mencakup
-halaman informasi, autentikasi Supabase, dan dashboard dasar berdasarkan role.
+JavaScript, Tailwind CSS, React, dan Lucide React. Aplikasi mencakup halaman
+informasi, autentikasi Supabase, serta dashboard nasabah dan petugas.
 
 ## Menjalankan proyek
 
@@ -30,8 +30,13 @@ Login tersedia di `/login`. Setelah Supabase Auth memverifikasi email dan
 password, aplikasi membaca `role` dari `public.profiles` berdasarkan ID sesi
 pengguna. Role `admin`, `petugas`, dan `nasabah` masing-masing diarahkan ke
 `/admin`, `/petugas`, dan `/nasabah`. Layout dashboard memeriksa ulang sesi
-server dan role dari database pada setiap akses. Logout mengakhiri sesi
-Supabase; cookie sesi dikelola oleh `@supabase/ssr`.
+server dan role dari database pada setiap akses. Dashboard nasabah menampilkan
+saldo, riwayat setoran dan penarikan, daftar harga sampah aktif, serta formulir
+pengajuan penarikan. Dashboard petugas menampilkan setoran terbaru, menyediakan
+formulir pencatatan setoran, dan memungkinkan konfirmasi pembayaran penarikan
+yang telah disetujui. Operasi transaksi menggunakan fungsi database Supabase
+yang tersedia di migrasi proyek. Logout mengakhiri sesi Supabase; cookie sesi
+dikelola oleh `@supabase/ssr`.
 
 Untuk menguji, siapkan tiga akun melalui Supabase Auth Dashboard atau proses
 administratif tepercaya yang sudah digunakan proyek, lalu pastikan baris
